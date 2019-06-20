@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.app.tomcat.jasmine</groupId>
+  <artifactId>jasmine-java</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>jasmine-java Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+<build>
+	<plugins>
+		<plugin>
+			<groupId>com.github.searls</groupId>
+			<artifactId>jasmine-maven-plugin</artifactId>
+			<version>2.2</version>
+			<executions>
+				<execution>
+					<goals>
+						<goal>test</goal>
+					</goals>
+				</execution>
+			</executions>
+			<configuration>
+				<webDriverClassName>org.openqa.selenium.phantomjs.PhantomJSDriver</webDriverClassName>
+				<webDriverCapabilities>
+	              <capability>
+	                <name>phantomjs.binary.path</name>
+	                <value>/home/javatdd/Downloads/phantomjs-2.1.1-linux-x86_64/bin/phantomjs</value>
+	              </capability>
+	            </webDriverCapabilities>
+				<jsSrcDir>src/main/webapp/js</jsSrcDir>
+			</configuration>
+		</plugin>
+		
+	</plugins>
+</build>
+</project>
